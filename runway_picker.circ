@@ -57,14 +57,42 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(120,380)" to="(320,380)"/>
-    <wire from="(120,340)" to="(320,340)"/>
-    <wire from="(370,360)" to="(600,360)"/>
+    <wire from="(380,110)" to="(380,180)"/>
+    <wire from="(240,190)" to="(300,190)"/>
+    <wire from="(350,210)" to="(400,210)"/>
+    <wire from="(170,100)" to="(170,310)"/>
+    <wire from="(210,290)" to="(210,310)"/>
+    <wire from="(450,200)" to="(450,420)"/>
+    <wire from="(210,340)" to="(250,340)"/>
+    <wire from="(260,230)" to="(300,230)"/>
+    <wire from="(210,310)" to="(210,340)"/>
+    <wire from="(340,110)" to="(380,110)"/>
+    <wire from="(260,130)" to="(260,230)"/>
+    <wire from="(230,230)" to="(260,230)"/>
+    <wire from="(120,190)" to="(210,190)"/>
+    <wire from="(230,380)" to="(250,380)"/>
+    <wire from="(230,230)" to="(230,280)"/>
+    <wire from="(210,210)" to="(210,260)"/>
+    <wire from="(300,360)" to="(570,360)"/>
+    <wire from="(230,310)" to="(230,380)"/>
+    <wire from="(170,100)" to="(290,100)"/>
+    <wire from="(450,420)" to="(570,420)"/>
+    <wire from="(120,380)" to="(230,380)"/>
+    <wire from="(170,310)" to="(210,310)"/>
+    <wire from="(120,340)" to="(210,340)"/>
+    <wire from="(210,210)" to="(300,210)"/>
+    <wire from="(260,130)" to="(290,130)"/>
+    <wire from="(380,180)" to="(400,180)"/>
     <comp lib="0" loc="(120,190)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="Direction 2"/>
     </comp>
-    <comp lib="0" loc="(600,360)" name="Pin">
+    <comp lib="0" loc="(120,380)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Runway B status"/>
+    </comp>
+    <comp lib="0" loc="(570,420)" name="Pin">
+      <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
@@ -72,21 +100,25 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Runway A status"/>
     </comp>
-    <comp lib="0" loc="(120,380)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Runway B status"/>
+    <comp lib="1" loc="(300,360)" name="AND Gate"/>
+    <comp lib="1" loc="(230,280)" name="NOT Gate">
+      <a name="facing" val="north"/>
     </comp>
+    <comp lib="1" loc="(340,110)" name="AND Gate"/>
+    <comp lib="1" loc="(210,260)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(350,210)" name="AND Gate"/>
     <comp lib="0" loc="(120,150)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="Direction 1"/>
     </comp>
-    <comp lib="1" loc="(370,360)" name="AND Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(580,170)" name="Pin">
+    <comp lib="0" loc="(570,360)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="1" loc="(240,190)" name="NOT Gate"/>
+    <comp lib="1" loc="(450,200)" name="OR Gate"/>
   </circuit>
 </project>
