@@ -30,8 +30,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#/root/Desktop/air-traffic-control/runway_status.circ" name="7"/>
-  <lib desc="file#/root/Desktop/air-traffic-control/runway_picker.circ" name="8"/>
+  <lib desc="file#/home/archit/git/air-traffic-control/src/logisim/runway_status.circ" name="7"/>
+  <lib desc="file#/home/archit/git/air-traffic-control/src/logisim/runway_picker.circ" name="8"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -70,53 +70,74 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(190,220)" to="(190,290)"/>
+    <wire from="(300,130)" to="(360,130)"/>
+    <wire from="(380,220)" to="(440,220)"/>
     <wire from="(120,80)" to="(180,80)"/>
-    <wire from="(110,140)" to="(110,210)"/>
     <wire from="(170,90)" to="(170,100)"/>
     <wire from="(180,280)" to="(180,290)"/>
-    <wire from="(200,210)" to="(200,290)"/>
+    <wire from="(190,130)" to="(190,140)"/>
+    <wire from="(180,180)" to="(300,180)"/>
+    <wire from="(360,130)" to="(360,140)"/>
+    <wire from="(110,140)" to="(110,220)"/>
     <wire from="(180,80)" to="(180,100)"/>
     <wire from="(130,90)" to="(170,90)"/>
     <wire from="(140,280)" to="(180,280)"/>
-    <wire from="(190,130)" to="(190,160)"/>
     <wire from="(120,80)" to="(120,110)"/>
     <wire from="(90,110)" to="(120,110)"/>
+    <wire from="(190,140)" to="(350,140)"/>
     <wire from="(110,40)" to="(200,40)"/>
+    <wire from="(200,250)" to="(200,290)"/>
     <wire from="(110,140)" to="(130,140)"/>
-    <wire from="(180,180)" to="(200,180)"/>
+    <wire from="(380,180)" to="(380,220)"/>
     <wire from="(90,110)" to="(90,220)"/>
-    <wire from="(240,170)" to="(260,170)"/>
+    <wire from="(190,240)" to="(210,240)"/>
     <wire from="(190,50)" to="(190,100)"/>
     <wire from="(130,90)" to="(130,140)"/>
     <wire from="(180,130)" to="(180,180)"/>
+    <wire from="(190,240)" to="(190,290)"/>
     <wire from="(110,50)" to="(190,50)"/>
-    <wire from="(190,160)" to="(200,160)"/>
-    <wire from="(260,170)" to="(260,230)"/>
+    <wire from="(200,250)" to="(210,250)"/>
+    <wire from="(300,130)" to="(300,180)"/>
+    <wire from="(400,160)" to="(480,160)"/>
+    <wire from="(80,60)" to="(90,60)"/>
+    <wire from="(110,220)" to="(120,220)"/>
+    <wire from="(80,220)" to="(90,220)"/>
     <wire from="(200,40)" to="(200,100)"/>
+    <comp lib="0" loc="(370,160)" name="Splitter">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="7" loc="(200,290)" name="main">
+      <a name="facing" val="south"/>
+      <a name="label" val="Runway status"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(120,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="tristate" val="false"/>
+    </comp>
     <comp lib="8" loc="(190,130)" name="main">
       <a name="facing" val="south"/>
       <a name="label" val="Runway Picker"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="3" loc="(240,170)" name="BitAdder">
-      <a name="width" val="1"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(140,280)" name="Pin">
-      <a name="width" val="2"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(90,60)" name="Pin">
+    <comp lib="0" loc="(90,60)" name="Splitter"/>
+    <comp lib="0" loc="(80,60)" name="Pin">
       <a name="width" val="2"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Direction"/>
     </comp>
-    <comp lib="0" loc="(90,60)" name="Splitter"/>
-    <comp lib="7" loc="(200,290)" name="main">
-      <a name="facing" val="south"/>
-      <a name="label" val="Runway status"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="0" loc="(140,280)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(440,220)" name="Clock">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(80,220)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="4" loc="(400,160)" name="Register">
+      <a name="width" val="2"/>
     </comp>
   </circuit>
 </project>

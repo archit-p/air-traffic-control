@@ -75,15 +75,18 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(620,220)" to="(620,360)"/>
     <wire from="(310,410)" to="(500,410)"/>
     <wire from="(430,290)" to="(480,290)"/>
+    <wire from="(180,340)" to="(180,350)"/>
+    <wire from="(200,320)" to="(200,330)"/>
+    <wire from="(190,330)" to="(190,340)"/>
     <wire from="(440,40)" to="(440,50)"/>
     <wire from="(430,250)" to="(430,260)"/>
     <wire from="(310,70)" to="(310,80)"/>
     <wire from="(340,300)" to="(340,310)"/>
     <wire from="(370,70)" to="(370,80)"/>
     <wire from="(370,110)" to="(370,120)"/>
-    <wire from="(650,220)" to="(690,220)"/>
     <wire from="(540,240)" to="(540,270)"/>
     <wire from="(280,360)" to="(280,390)"/>
+    <wire from="(180,350)" to="(220,350)"/>
     <wire from="(340,200)" to="(340,230)"/>
     <wire from="(590,250)" to="(590,270)"/>
     <wire from="(360,290)" to="(400,290)"/>
@@ -91,14 +94,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(280,360)" to="(310,360)"/>
     <wire from="(310,310)" to="(340,310)"/>
     <wire from="(350,350)" to="(380,350)"/>
+    <wire from="(220,240)" to="(370,240)"/>
     <wire from="(510,360)" to="(530,360)"/>
+    <wire from="(210,340)" to="(210,450)"/>
+    <wire from="(190,340)" to="(210,340)"/>
     <wire from="(440,220)" to="(450,220)"/>
     <wire from="(270,390)" to="(280,390)"/>
     <wire from="(300,80)" to="(310,80)"/>
     <wire from="(310,310)" to="(310,360)"/>
     <wire from="(280,170)" to="(540,170)"/>
     <wire from="(340,200)" to="(470,200)"/>
-    <wire from="(240,240)" to="(370,240)"/>
+    <wire from="(650,270)" to="(650,450)"/>
     <wire from="(310,70)" to="(370,70)"/>
     <wire from="(450,150)" to="(450,220)"/>
     <wire from="(610,90)" to="(610,290)"/>
@@ -107,6 +113,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(280,230)" to="(280,360)"/>
     <wire from="(540,270)" to="(590,270)"/>
     <wire from="(370,120)" to="(420,120)"/>
+    <wire from="(210,450)" to="(650,450)"/>
     <wire from="(560,360)" to="(620,360)"/>
     <wire from="(420,110)" to="(420,120)"/>
     <wire from="(450,80)" to="(450,90)"/>
@@ -120,6 +127,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(410,350)" to="(450,350)"/>
     <wire from="(470,230)" to="(560,230)"/>
     <wire from="(230,280)" to="(260,280)"/>
+    <wire from="(200,330)" to="(230,330)"/>
     <wire from="(540,220)" to="(560,220)"/>
     <wire from="(540,240)" to="(560,240)"/>
     <wire from="(600,220)" to="(620,220)"/>
@@ -129,21 +137,30 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(580,290)" to="(610,290)"/>
     <wire from="(520,290)" to="(550,290)"/>
     <wire from="(360,110)" to="(360,150)"/>
+    <wire from="(220,240)" to="(220,350)"/>
+    <wire from="(180,320)" to="(200,320)"/>
     <wire from="(220,180)" to="(240,180)"/>
     <wire from="(390,220)" to="(400,220)"/>
     <wire from="(620,100)" to="(620,220)"/>
+    <wire from="(230,280)" to="(230,330)"/>
     <wire from="(300,50)" to="(310,50)"/>
     <wire from="(480,110)" to="(480,290)"/>
+    <wire from="(180,330)" to="(190,330)"/>
     <wire from="(310,360)" to="(310,410)"/>
     <wire from="(350,300)" to="(350,350)"/>
     <wire from="(390,160)" to="(390,220)"/>
     <wire from="(310,40)" to="(440,40)"/>
     <wire from="(540,170)" to="(540,220)"/>
     <wire from="(510,300)" to="(510,360)"/>
-    <wire from="(650,220)" to="(650,270)"/>
-    <comp lib="0" loc="(300,80)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="label" val="Runway A status"/>
+    <comp lib="4" loc="(520,280)" name="Counter">
+      <a name="width" val="4"/>
+      <a name="max" val="0xd"/>
+      <a name="ongoal" val="stay"/>
+    </comp>
+    <comp lib="1" loc="(430,290)" name="NOT Gate"/>
+    <comp lib="1" loc="(370,80)" name="AND Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
     </comp>
     <comp lib="4" loc="(360,280)" name="Counter">
       <a name="width" val="4"/>
@@ -153,46 +170,39 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="1" loc="(530,360)" name="NOT Gate">
       <a name="facing" val="west"/>
     </comp>
-    <comp lib="4" loc="(440,220)" name="S-R Flip-Flop"/>
-    <comp lib="5" loc="(240,240)" name="Button"/>
+    <comp lib="0" loc="(160,350)" name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="4"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="2"/>
+    </comp>
     <comp lib="2" loc="(240,180)" name="Demultiplexer">
       <a name="select" val="2"/>
     </comp>
-    <comp lib="1" loc="(580,290)" name="NOT Gate"/>
-    <comp lib="0" loc="(300,50)" name="Pin">
+    <comp lib="0" loc="(300,80)" name="Pin">
       <a name="output" val="true"/>
-      <a name="label" val="Runway B status"/>
-    </comp>
-    <comp lib="1" loc="(430,290)" name="NOT Gate"/>
-    <comp lib="0" loc="(270,390)" name="Clock"/>
-    <comp lib="1" loc="(440,50)" name="AND Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(220,180)" name="Constant"/>
-    <comp lib="4" loc="(520,280)" name="Counter">
-      <a name="width" val="4"/>
-      <a name="max" val="0xd"/>
-      <a name="ongoal" val="stay"/>
+      <a name="label" val="Runway A status"/>
     </comp>
     <comp lib="1" loc="(380,350)" name="NOT Gate">
       <a name="facing" val="west"/>
     </comp>
-    <comp lib="5" loc="(690,220)" name="Button">
-      <a name="facing" val="west"/>
+    <comp lib="0" loc="(160,350)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
     </comp>
-    <comp lib="1" loc="(370,80)" name="AND Gate">
+    <comp lib="4" loc="(440,220)" name="S-R Flip-Flop"/>
+    <comp lib="0" loc="(220,180)" name="Constant"/>
+    <comp lib="1" loc="(580,290)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,50)" name="AND Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="0" loc="(230,280)" name="Pin">
-      <a name="width" val="2"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Chosen Runway"/>
-    </comp>
     <comp lib="4" loc="(600,220)" name="S-R Flip-Flop"/>
-    <comp lib="6" loc="(160,303)" name="Text">
-      <a name="text" val="00 for A, 01 for B, 11 for reset"/>
+    <comp lib="0" loc="(300,50)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="label" val="Runway B status"/>
     </comp>
+    <comp lib="0" loc="(270,390)" name="Clock"/>
   </circuit>
 </project>
