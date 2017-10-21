@@ -88,31 +88,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(240,230)" to="(310,230)"/>
     <wire from="(710,260)" to="(720,260)"/>
     <wire from="(250,240)" to="(250,300)"/>
-    <comp lib="1" loc="(610,280)" name="OR Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="1" loc="(350,200)" name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="6" loc="(480,74)" name="Text">
-      <a name="text" val="Runway Picker"/>
-      <a name="font" val="SansSerif plain 64"/>
-    </comp>
-    <comp lib="6" loc="(747,326)" name="Text">
-      <a name="text" val="O3 = A.B"/>
-    </comp>
-    <comp lib="0" loc="(720,260)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="4"/>
-      <a name="label" val="O4O3O2O1"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="6" loc="(754,347)" name="Text">
-      <a name="text" val="O2 = (A.B)'"/>
-    </comp>
     <comp lib="0" loc="(710,260)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
@@ -123,32 +98,58 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit2" val="1"/>
       <a name="bit3" val="0"/>
     </comp>
-    <comp lib="0" loc="(210,260)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="D1D2AB"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="0" loc="(220,260)" name="Splitter">
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-    </comp>
     <comp lib="0" loc="(690,220)" name="Constant"/>
-    <comp lib="1" loc="(380,280)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="6" loc="(768,367)" name="Text">
-      <a name="text" val="O1 = A + B'.D2'"/>
+    <comp lib="1" loc="(350,200)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
     </comp>
     <comp lib="1" loc="(450,290)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
+    <comp lib="6" loc="(480,74)" name="Text">
+      <a name="text" val="Runway Picker"/>
+      <a name="font" val="SansSerif plain 64"/>
+    </comp>
+    <comp lib="0" loc="(220,260)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="6" loc="(754,347)" name="Text">
+      <a name="text" val="O2 = (A.B)'"/>
+    </comp>
+    <comp lib="1" loc="(580,240)" name="NOT Gate"/>
+    <comp lib="6" loc="(747,326)" name="Text">
+      <a name="text" val="O3 = A.B"/>
+    </comp>
+    <comp lib="1" loc="(610,280)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(210,260)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="D1D2AB"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(720,260)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="O4O3O2O1"/>
+      <a name="labelloc" val="south"/>
+    </comp>
     <comp lib="1" loc="(380,300)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(580,240)" name="NOT Gate"/>
+    <comp lib="1" loc="(380,280)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
     <comp lib="6" loc="(741,306)" name="Text">
       <a name="text" val="O4 = 1"/>
+    </comp>
+    <comp lib="6" loc="(768,367)" name="Text">
+      <a name="text" val="O1 = A + B'.D2'"/>
     </comp>
   </circuit>
 </project>
