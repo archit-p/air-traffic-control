@@ -135,47 +135,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(680,490)" to="(690,490)"/>
     <wire from="(690,80)" to="(700,80)"/>
     <wire from="(630,380)" to="(640,380)"/>
-    <comp lib="1" loc="(740,320)" name="NOT Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(330,80)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Runway A Status"/>
-    </comp>
-    <comp lib="4" loc="(410,480)" name="Counter">
-      <a name="width" val="4"/>
-      <a name="max" val="0xd"/>
-      <a name="ongoal" val="stay"/>
-    </comp>
-    <comp lib="1" loc="(700,500)" name="NOT Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(330,30)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Runway B Status"/>
-    </comp>
-    <comp lib="1" loc="(470,320)" name="NOT Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="4" loc="(410,380)" name="S-R Flip-Flop"/>
-    <comp lib="4" loc="(680,380)" name="S-R Flip-Flop"/>
-    <comp lib="0" loc="(330,130)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Wait signal"/>
-    </comp>
-    <comp lib="0" loc="(580,580)" name="Clock"/>
-    <comp lib="1" loc="(660,70)" name="AND Gate">
-      <a name="facing" val="west"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(330,400)" name="Constant">
+    <comp lib="0" loc="(600,400)" name="Constant">
       <a name="value" val="0x0"/>
     </comp>
     <comp lib="4" loc="(680,480)" name="Counter">
@@ -183,31 +143,86 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="max" val="0xd"/>
       <a name="ongoal" val="stay"/>
     </comp>
-    <comp lib="2" loc="(140,160)" name="Demultiplexer">
-      <a name="select" val="4"/>
-    </comp>
+    <comp lib="4" loc="(410,380)" name="S-R Flip-Flop"/>
     <comp lib="0" loc="(310,580)" name="Clock"/>
+    <comp lib="1" loc="(470,320)" name="NOT Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(330,130)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Wait signal"/>
+    </comp>
+    <comp lib="1" loc="(430,500)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="6" loc="(62,420)" name="Text">
+      <a name="text" val="Bit 0 is enable"/>
+    </comp>
+    <comp lib="1" loc="(700,500)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="6" loc="(191,173)" name="Text">
+      <a name="text" val="a"/>
+    </comp>
+    <comp lib="1" loc="(660,70)" name="AND Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(330,80)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Runway A Status"/>
+    </comp>
+    <comp lib="4" loc="(680,380)" name="S-R Flip-Flop"/>
+    <comp lib="0" loc="(80,390)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(191,203)" name="Text">
+      <a name="text" val="b"/>
+    </comp>
     <comp lib="1" loc="(390,70)" name="AND Gate">
       <a name="facing" val="west"/>
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="0" loc="(80,390)" name="Pin">
-      <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
+    <comp lib="4" loc="(410,480)" name="Counter">
+      <a name="width" val="4"/>
+      <a name="max" val="0xd"/>
+      <a name="ongoal" val="stay"/>
     </comp>
+    <comp lib="0" loc="(580,580)" name="Clock"/>
     <comp lib="0" loc="(80,390)" name="Splitter">
       <a name="incoming" val="5"/>
       <a name="bit2" val="1"/>
       <a name="bit3" val="1"/>
       <a name="bit4" val="1"/>
     </comp>
-    <comp lib="1" loc="(430,500)" name="NOT Gate">
-      <a name="facing" val="south"/>
+    <comp lib="2" loc="(140,160)" name="Demultiplexer">
+      <a name="select" val="4"/>
+    </comp>
+    <comp lib="1" loc="(740,320)" name="NOT Gate">
+      <a name="facing" val="north"/>
       <a name="size" val="20"/>
     </comp>
-    <comp lib="0" loc="(600,400)" name="Constant">
+    <comp lib="0" loc="(330,400)" name="Constant">
       <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="6" loc="(137,437)" name="Text">
+      <a name="text" val="Bit 1-4 is the output from runway picker"/>
+    </comp>
+    <comp lib="6" loc="(191,224)" name="Text">
+      <a name="text" val="d"/>
+    </comp>
+    <comp lib="0" loc="(330,30)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Runway B Status"/>
     </comp>
   </circuit>
 </project>
