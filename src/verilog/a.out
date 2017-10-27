@@ -1,0 +1,93 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 11;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55a2d28e2080 .scope module, "tb" "tb" 2 2;
+ .timescale -9 -11;
+v0x55a2d2908f40_0 .var "A", 0 0;
+v0x55a2d2909000_0 .var "B", 0 0;
+v0x55a2d29090d0_0 .var "D1", 0 0;
+v0x55a2d29091d0_0 .var "D2", 0 0;
+v0x55a2d29092a0_0 .var "E", 0 0;
+v0x55a2d2909340_0 .net "O1", 0 0, v0x55a2d2908a90_0;  1 drivers
+v0x55a2d2909410_0 .net "O2", 0 0, v0x55a2d2908b50_0;  1 drivers
+v0x55a2d29094e0_0 .net "O3", 0 0, v0x55a2d2908c10_0;  1 drivers
+v0x55a2d29095b0_0 .net "O4", 0 0, v0x55a2d2908cd0_0;  1 drivers
+S_0x55a2d28aab50 .scope module, "runway_pick" "runway_picker" 2 5, 3 1 0, S_0x55a2d28e2080;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "E"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 1 "D1"
+    .port_info 4 /INPUT 1 "D2"
+    .port_info 5 /OUTPUT 1 "O4"
+    .port_info 6 /OUTPUT 1 "O3"
+    .port_info 7 /OUTPUT 1 "O2"
+    .port_info 8 /OUTPUT 1 "O1"
+v0x55a2d28aae20_0 .net "A", 0 0, v0x55a2d2908f40_0;  1 drivers
+v0x55a2d2908730_0 .net "B", 0 0, v0x55a2d2909000_0;  1 drivers
+v0x55a2d29087f0_0 .net "D1", 0 0, v0x55a2d29090d0_0;  1 drivers
+v0x55a2d29088c0_0 .net "D2", 0 0, v0x55a2d29091d0_0;  1 drivers
+v0x55a2d2908980_0 .net "E", 0 0, v0x55a2d29092a0_0;  1 drivers
+v0x55a2d2908a90_0 .var "O1", 0 0;
+v0x55a2d2908b50_0 .var "O2", 0 0;
+v0x55a2d2908c10_0 .var "O3", 0 0;
+v0x55a2d2908cd0_0 .var "O4", 0 0;
+E_0x55a2d28e2970/0 .event edge, v0x55a2d29088c0_0, v0x55a2d29087f0_0, v0x55a2d2908730_0, v0x55a2d28aae20_0;
+E_0x55a2d28e2970/1 .event edge, v0x55a2d2908980_0;
+E_0x55a2d28e2970 .event/or E_0x55a2d28e2970/0, E_0x55a2d28e2970/1;
+    .scope S_0x55a2d28aab50;
+T_0 ;
+    %wait E_0x55a2d28e2970;
+    %load/vec4 v0x55a2d2908980_0;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_0.0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a2d2908cd0_0, 0, 1;
+    %load/vec4 v0x55a2d28aae20_0;
+    %load/vec4 v0x55a2d2908730_0;
+    %and;
+    %store/vec4 v0x55a2d2908c10_0, 0, 1;
+    %load/vec4 v0x55a2d2908c10_0;
+    %inv;
+    %store/vec4 v0x55a2d2908b50_0, 0, 1;
+    %load/vec4 v0x55a2d28aae20_0;
+    %load/vec4 v0x55a2d2908730_0;
+    %inv;
+    %load/vec4 v0x55a2d29088c0_0;
+    %inv;
+    %and;
+    %or;
+    %store/vec4 v0x55a2d2908a90_0, 0, 1;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x55a2d28e2080;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a2d29092a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a2d2908f40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a2d2909000_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a2d29090d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a2d29091d0_0, 0, 1;
+    %vpi_call 2 13 "$monitor", "Input:%d%d%d%d%d", v0x55a2d29092a0_0, v0x55a2d2908f40_0, v0x55a2d2909000_0, v0x55a2d29090d0_0, v0x55a2d29091d0_0 {0 0 0};
+    %delay 10000, 0;
+    %vpi_call 2 15 "$monitor", "Output:%d%d%d%d", v0x55a2d29095b0_0, v0x55a2d29094e0_0, v0x55a2d2909410_0, v0x55a2d2909340_0 {0 0 0};
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb.v";
+    "runway_picker.v";
