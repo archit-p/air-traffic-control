@@ -2,13 +2,18 @@ module runway_status(i3,i2,i1,i0,en,clk,a,b,w);
 	reg [3:0]cb=4'b0000;
 	reg [3:0]cw=4'b0000;
 	reg [3:0]ca=4'b0000;
+	reg [3:0]in=4'b0000;
 	input en,i0,i1,i2,i3,clk;
-	output reg a,b,w;
+	output reg a,b,w;	
 	always @(posedge clk)
 	begin
+		in[0]=i0;
+		in[1]=i1;
+		in[2]=i2;
+		in[3]=i3;
 		if (en==1)
 		begin
-			if(i3==1 and i2==0 and i1==1 and i0==0)  //runway A
+			if(in==4'b1010)  //runway A
 			begin
 				a=1;
 				ca<=ca+4'b0001;
@@ -18,7 +23,7 @@ module runway_status(i3,i2,i1,i0,en,clk,a,b,w);
 					a=0;
 				end
 			end
-			if(i3==1 and i2==1 and i1==1 and i0==1)  //runway B
+			if(in==4'b1011)  //runway B
 			begin
 				b=1;		
 				cb<=4'b0001+cb;
@@ -28,7 +33,7 @@ module runway_status(i3,i2,i1,i0,en,clk,a,b,w);
 					b=0;
 				end
 			end
-			if(i3==1 and i2==1 and i1==0 and i0==1)  //wait
+			if(in==4'b1101)  //wait
 			begin
 				w=1;
 				cw<=4'b0001+cw;
