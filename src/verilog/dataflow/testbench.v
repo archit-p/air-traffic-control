@@ -3,7 +3,8 @@ module tb_picker;
     reg en,clk;
     reg [1:0] d;
     wire [3:0]signal;
-    runway_picker runway_pick(en,d,clk,signal);
+    wire A,B;
+    runway_picker runway_pick(d,A,B,clk,en,signal);
     initial begin
         
         clk = 1'b0;
@@ -18,6 +19,8 @@ module tb_picker;
                 en = 1'b1;
                 d = 2'b00;
         #10     en = 1'b0;
+            //A=0;
+           // B=0;
                 $monitor("Direction: %d Signal: %d", d, signal);
 
         #100
