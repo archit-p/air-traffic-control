@@ -1,4 +1,4 @@
-module controller(d,clk,en,signal);
+module runway_select(d,clk,en,signal);
 	input [1:0] d;
 	input clk;
 	input en;
@@ -32,7 +32,7 @@ module controller(d,clk,en,signal);
 			end
             else if(b == 0)
 			begin
-            	signal = 4'b1011;
+                signal = 4'b1011;
 				b = 1'b1;
 			end
             else
@@ -43,7 +43,7 @@ module controller(d,clk,en,signal);
                 signal = 4'b1011;
 				b = 1'b1;
 			end
-         	else if(a == 0)
+            else if(a == 0)
 			begin
                 signal = 4'b1010;
 				a = 1'b1;
@@ -51,18 +51,18 @@ module controller(d,clk,en,signal);
             else
                 signal = 4'b1101;
 		if(d == 2'b11)
-			if(a == 0)
+            if(a == 0)
 			begin
-				signal = 4'b1010;
+                signal = 4'b1010;
 				a = 1'b1;
 			end
-			else if(b == 0)
+            else if(b == 0)
 			begin
-				signal = 4'b1011;
+                signal = 4'b1011;
 				b = 1'b1;
 			end
-			else
-				signal = 4'b1101;
+            else
+                signal = 4'b1101;
 	end
 	
 	always@(posedge clk)
@@ -71,9 +71,9 @@ module controller(d,clk,en,signal);
             counta = counta + 1;
         if(b == 1)
             countb = countb + 1;
-		if(counta == 15)
-			a = 0;
-		if(countb == 15)
-			b = 0;
+        if(counta == 15)
+            a = 0;
+        if(countb == 15)
+            b = 0;
 	end
 endmodule

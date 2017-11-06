@@ -1,4 +1,4 @@
-module runway_picker(d,A,B,clk,E,signal);
+module runway_select(d,A,B,clk,E,signal);
 	reg a ,b;
 	integer counta = 0, countb = 0;
 	input [1:0]d;
@@ -28,6 +28,4 @@ module runway_picker(d,A,B,clk,E,signal);
 		assign counta=(counta==15)?0:counta;
 
 	end
-	
-
 endmodule
