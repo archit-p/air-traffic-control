@@ -20,7 +20,7 @@ Output:
 1. The runway will light up according to the request.
 2. If the runway in required direction is not available, the other runway is assigned.
 3. If both the runways are full then a wait signal lights up.
-4. If a wait signal is displayed, then a new request has to be issued a.
+4. If a wait signal is displayed, then a new request has to be issued again.
 
 Sample input:
 D1 = 0 D2 = 0
