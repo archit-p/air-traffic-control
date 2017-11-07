@@ -17,7 +17,7 @@ ROll:16CO126
 *********************************************/
 
 
-module runway_select(d,clk,en,signal);
+module runway_select(d,A,B,clk,en,signal);
 
 /********************************************
 Inputs :
@@ -39,12 +39,14 @@ Other Variables:
    and clears the runway after that
 ********************************************/
 	input [1:0] d;
+	input A,B;
 	input clk;
 	input en;
 	output reg [3:0]signal;
 	reg a = 1'b0;
 	reg b = 1'b0;
-	integer counta = 0, countb = 0;
+	integer counta = 0;
+	integer countb = 0;
 
 //The en signal is used to represent that an input has been given to the circuit. It is negative edge triggererd, 
 //any change in the value signifies a new input and hence a new set of computations is carried out.

@@ -41,10 +41,11 @@ Other Variables:
 4) countb-counter for runway b, counts till 15
    and clears the runway after that
 ********************************************/
-    reg en,clk;
+    reg en;
+    reg clk;
     reg [1:0] d;
     wire [3:0]signal;
-    runway_select runway_pick(d,clk,en,signal);             //Create an object of type runway_select
+    runway_select runway_pick(d,A,B,clk,en,signal);             //Create an object of type runway_select
     initial 
     begin        
         clk = 1'b0;
@@ -53,7 +54,7 @@ Other Variables:
     end 
     initial
     begin
-        $dumpfile("output.vcd");                            //Create the vcd file
+        $dumpfile("dataflow.vcd");                            //Create the vcd file
         $dumpvars(0,runway_pick);                           
 
 //Uniform direction is maintained throught the test cases, but the frequency of inputs vary and 
@@ -64,22 +65,22 @@ Other Variables:
 
         en = 1'b1;                                          //Enable switch is turned on to make the circuit take input
         d = 2'b00;
-        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         #10
+        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         $monitor("Direction: %d Signal: %d", d, signal);    //Display
 
         #100
         en = 1'b1;                                          //Enable switch is turned on to make the circuit take input
         d = 2'b00;
-        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         #10
+        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         $monitor("Direction: %d Signal: %d", d, signal);    //Display
 
         #100
         en = 1'b1;                                          //Enable switch is turned on to make the circuit take input
         d = 2'b00;
-        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         #10
+        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         $monitor("Direction: %d Signal: %d", d, signal);    //Display
 
 //At this point all the runways are full for the next 15 seconds and the frequency of input is increased
@@ -88,22 +89,22 @@ Other Variables:
         #20
         en = 1'b1;                                          //Enable switch is turned on to make the circuit take input
         d = 2'b00;
-        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         #10
+        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         $monitor("Direction: %d Signal: %d", d, signal);    //Display
 
         #20
         en = 1'b1;                                          //Enable switch is turned on to make the circuit take input
         d = 2'b00;
-        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
-        #10                
+        #10   
+        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given              
         $monitor("Direction: %d Signal: %d", d, signal);    //Display
 
         #20
         en = 1'b1;                                          //Enable switch is turned on to make the circuit take input
         d = 2'b00;
-        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         #10
+        en = 1'b0;                                          //Disabling the switch signifies input has been succesfully given
         $monitor("Direction: %d Signal: %d", d, signal);    //Display
         
     end

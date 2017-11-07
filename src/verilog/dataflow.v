@@ -38,8 +38,10 @@ Other Variables:
 4) countb-counter for runway b, counts till 15
    and clears the runway after that
 ********************************************/
-	reg a ,b;
-	integer counta = 0, countb = 0;
+	reg a;
+	reg b;
+	integer counta = 0;
+	integer countb = 0;
 	input [1:0]d;
 	input E,clk;	
 	output reg [3:0]signal;
@@ -58,17 +60,17 @@ Other Variables:
 		assign signal[1]=~signal[2];
 		assign signal[0]=a|(~b&~d[1]);
 	end
-	always@(posedge clk or b)
+	always@(posedge clk)
 	begin
 		assign countb=(signal==4'b1011)?countb+1:countb+1;		//If current landing is on B, start timer  for B
-		assign B=(countb>2)?1:0;								//Hold runway B full till landing takes place
+		assign B=(countb>5)?1:0;								//Hold runway B full till landing takes place
 		assign countb=(countb==15)?0:countb;					//Reset counter for runway b when it reaches 15
 
 	end	
-	always@(posedge clk or a)
+	always@(posedge clk)
 	begin
 		assign counta=(signal==4'b1010)?counta+1:counta+1;		//If current landing is on A, start timer  for A
-		assign B=(countb>2)?1:0;								//Hold runway A full till landing takes place
+		assign A=(counta<10)?1:0;								//Hold runway A full till landing takes place
 		assign counta=(counta==15)?0:counta;					//Reset counter for runway b when it reaches 15
 
 	end
