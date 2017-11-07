@@ -54,7 +54,7 @@ Other Variables:
     end 
     initial
     begin
-        $dumpfile("dataflow.vcd");                            //Create the vcd file
+        $dumpfile("behavioural.vcd");                            //Create the vcd file
         $dumpvars(0,runway_pick);                           
 
 //Uniform direction is maintained throught the test cases, but the frequency of inputs vary and 
